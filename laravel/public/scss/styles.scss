@@ -1,8 +1,26 @@
-div {
-	background-color: red;
+main {
+	background-color: yellow;
 }
-
 header {
-	color: yellow;
-	font-size: 12px;
+	background: red;
+}
+footer {
+	background-color: blue;
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+.hero	{
+	width: 960px;
+	margin: 0 auto;
+	height: 200px;
+	position: relative;
+}
+.content {
+	background-color: pink;
+	width: 960px;
+	margin: 0 auto;
+	height: 400px;
+	position: relative;
+
 }
