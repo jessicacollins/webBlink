@@ -104,10 +104,12 @@ nav a {
 
 .fog header {
 	background-color: purple;
+	color: DodgerBlue;
 }
 
 .glass header {
 	background-color: DarkSeaGreen;
+	color:  LawnGreen;
 }
 
 .box h2 {
@@ -116,10 +118,11 @@ nav a {
 }
 
 .box section {
+	box-sizing: border-box;
 	height: 75%;
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
-	padding: 10px;
+	padding: 15px;
 
 }
 
@@ -129,7 +132,85 @@ nav a {
 
 .glass section {
 	background-color: MediumPurple;
+	text-align: center;
 }
+
+.save-pattern {
+	background-color: Thistle;
+	padding: 20px 0px;
+	padding-top: 20px;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.save-pattern input {
+	border: 1px solid #aaa;
+	padding: 10px 10px;
+	border-radius: 2px;
+	width: 155px;
+}
+
+.dial {
+	outline: none;
+}
+
+.save-pattern button  {
+    padding: 10px 10px;
+    background: #4479BA;
+    color: #FFF;
+    width: 177px;
+    margin-top: 4px;
+}
+
+
+// Radio Buttons
+$DarkBrown: #292321;
+
+$Orange: #CC3300;
+
+div {
+  margin:0 0 0.75em 0;
+}
+
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: $DarkBrown;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
+
+input[type="radio"] + label span {
+     background-color:$DarkBrown;
+}
+
+input[type="radio"]:checked + label span{
+     background-color:$Orange;
+}
+
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
+
+
+
+
+
 
 
 

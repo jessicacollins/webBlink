@@ -19,19 +19,20 @@ gulp.task('js', function() {
 
  gulp.src([
      './bower_components/jquery/dist/jquery.js',
-     './bower_components/handlebars/handlebars.js',
- 	    'js/*.js'
+     './bower_components/jquery/dist/jquery.knob.min.js',     
+     // './bower_components/handlebars/handlebars.js',
+ 	    'js/src/**/*.js'
  	])
    .pipe(concat('build.js'))
    .pipe(uglify())
-   .pipe(gulp.dest('js/'));
+   .pipe(gulp.dest('./js/'));
 
 });
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-gulp.watch(['js/*.js'], ['js']);
-gulp.watch(['scss/*.scss'], ['sass']);
+  gulp.watch(['js/src/**/*.js'], ['js']);
+  gulp.watch(['scss/*.scss'], ['sass']);
 });
 
 // The default task (called when you run `gulp` from cli)
