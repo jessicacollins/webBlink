@@ -2,19 +2,20 @@ main {
   background-color: yellow; }
 
 header {
-  background: red; }
+  background: red;
+  margin: 0 auto;
+  position: relative; }
+
+nav a {
+  font-size: 14px;
+  text-decoration: none; }
 
 footer {
   background-color: blue;
-  width: 960px;
+  height: 100px;
   margin: 0 auto;
-  position: relative; }
-
-.hero {
-  width: 960px;
-  margin: 0 auto;
-  height: 200px;
-  position: relative; }
+  position: relative;
+  text-align: center; }
 
 .content {
   background-color: pink;

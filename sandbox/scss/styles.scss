@@ -1,0 +1,136 @@
+body {
+	background-color: Gainsboro;
+}
+main {
+	width: 960px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	background-color: light-grey;
+}
+
+.primary-header {
+	background: red;
+	margin: 0 auto;
+	position: relative;
+	height: 100px;
+
+}
+
+.primary-header div {
+	height: 50px;
+	width: 150px;
+	background-color: grey;
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+
+}
+
+.logo a {
+	color: yellow;
+	text-decoration: none;
+}
+
+nav {
+	height: 50px;
+	width: 100px;
+	text-align: center;
+	background-color: grey;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+
+}
+
+
+nav a {
+	font-size: 14px;
+	text-decoration: none;
+	color: yellow;
+}
+
+
+
+.control-panel {
+
+	background-color: grey;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	margin-left: -5px;
+	margin-right: -5px;
+	overflow: hidden;
+
+
+}
+
+.panel {
+	float: left;
+	height: 600px;
+	margin: 5px;
+}
+
+.panel > * + * {
+	margin-top: 10px;
+}
+
+.left-panel {
+	background-color: magenta;
+	width: calc(30% - 10px);
+}
+
+.middle-panel {
+	background-color: green;
+	width: calc(40% - 10px);
+}
+
+.right-panel {
+	background-color: cyan;
+	width: calc(30% - 10px);
+}
+
+.box {
+	background-color: pink;
+	height: calc(50% - 5px);
+}
+
+.box header {
+	background: purple;
+	top: 0;
+	height: 25%;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+}
+
+.fog header {
+	background-color: purple;
+}
+
+.glass header {
+	background-color: DarkSeaGreen;
+}
+
+.box h2 {
+	margin: 0;
+	padding: 30px;
+}
+
+.box section {
+	height: 75%;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.fog section {
+	background-color: LightSteelBlue;
+}
+
+.glass section {
+	background-color: MediumPurple;
+}
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+Use Font Awesome and Style form. 
+
+
+form {
+	background-color: gray;
+
+}
+
+
+
+
+
+
+div.input {
+	display: inline;
+	border: 1px solide #aaa;
+	padding: 2px;
+	border-radius: 5px;
+}
+
+input {
+	border: none;
+
+}
+
+input.email {
+	background: transparent url('image.png') no-repeat 4px center;
+	background-size: 1.1em;
+	border: 1px solid #aaa;
+	outline: none;
+	padding-left: 20px;
+}
