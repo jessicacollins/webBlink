@@ -35,4 +35,4 @@ gulp.watch(['scss/*.scss'], ['sass']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'sass']);
+gulp.task('default', ['watch', 'js', 'sass']);

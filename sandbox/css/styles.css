@@ -95,10 +95,12 @@ nav a {
 .box section {
   height: 75%;
   border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px; }
+  border-bottom-right-radius: 5px;
+   }
 
 .fog section {
   background-color: LightSteelBlue; }
 
 .glass section {
-  background-color: MediumPurple; }
+  background-color: MediumPurple; 
+  text-align: center;}
