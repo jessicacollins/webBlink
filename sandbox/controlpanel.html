@@ -3,14 +3,75 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Control Panel</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script src="./bower_components/jquery-knob/js/jQuery.knob.js"></script>	
+	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="./bower_components/jquery-knob/js/jQuery.knob.js"></script>
+	<script src="./bower_components/switchery/dist/switchery.js"></script>
+	<script src="./bower_components/nouislider/distribute/jquery.nouislider.js"></script>
+	<script src="./bower_components/flexnav/js/jquery.flexnav.min.js"></script>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="./bower_components/nouislider/src/jquery.nouislider.css">
+
 	<script>
 		$(function() {
+
+			//Flexnav
+			$(".flexnav").flexNav({
+			  'animationSpeed':     250,            // default for drop down animation speed
+			  'transitionOpacity':  true,           // default for opacity animation
+			  'buttonSelector':     '.menu-button', // default menu button class name
+			  'hoverIntent':        false,          // Change to true for use with hoverIntent plugin
+			  'hoverIntentTimeout': 150,            // hoverIntent default timeout
+			  'calcItemWidths':     false,          // dynamically calcs top level nav item widths
+			  'hover':              true            // would you like hover support?      
+			});
+
+			// jQuery Knob
 			$(".dial").knob();
+
+			//jQuery Switched
+			var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+			elems.forEach(function(html) {
+			  var switchery = new Switchery(html);
+			});
+
+
+			// function setColor(){
+
+			// 	// Get the slider values,
+			// 	// stick them together.
+			// 	var color = 'rgb(' +
+			// 		$("#red").val() + ',' +
+			// 		$("#green").val() + ',' +
+			// 		$("#blue").val() + ')';
+
+			// 	// Fill the color box.
+			// 	$(".result").css({
+			// 		background: color,
+			// 		color: color
+			// 	});
+			// }
+
+			// $('.sliders').noUiSlider({
+			// 	start: 127,
+			// 	connect: "lower",
+			// 	orientation: "vertical",
+			// 	range: {
+			// 		'min': 0,
+			// 		'max': 255
+			// 	},
+			// 	format: wNumb({
+			// 		decimals: 0
+			// 	})
+			// });
+
+			// // Bind the color changing function
+			// // to the slide event.
+			// $('.sliders').on('slide', setColor);
+
+
 		})
 	</script>
 
@@ -21,10 +82,14 @@
 			<div class="logo">
 				<a href="/"><h2>&lt;web<strong>B</strong>link&gt;</h2></a>
 			</div>
-			<nav>
-				<a href="/">Login</a>
-				<a href="">Register</a>
-			</nav>		
+
+			<nav>		 
+				<ul class="flexnav" data-breakpoint="800"> 
+					<li><a href="/">Login</a></li> 
+					<li><a href="/">Register</a></li> 
+				</ul>
+			</nav>
+
 		</header>
 
 		<div class="control-panel">
@@ -35,19 +100,15 @@
 					<section>
 						<form>
 							<div>
-							  <input type="radio" id="radio01" name="radio" />
-							  <label for="radio01"><span></span>Radio Button 1</label>
-							</div>
-
-							<div>
-							 <input type="radio" id="radio02" name="radio" />
-							 <label for="radio02"><span></span>Radio Button 2</label>
+								<div><input type="checkbox" name="pattern" value="rainbow" class="js-switch"/></div>
+								<div><input type="checkbox" name="pattern" value="chase" class="js-switch" /></div>
+								<div><input type="checkbox" name="pattern" value="cylon" class="js-switch"/></div>
 							</div>
 						</form>
 					</section>
 				</div>
 				<div class="box">
-					<header><h2><i class="fa fa-fire"></i>  Patterns</h2></header>
+					<header><h2><i class="fa fa-fire"></i>  Save Pattern</h2></header>
 					<section>
 						<div class="save-pattern">
 							<form action="">
@@ -67,9 +128,9 @@
 					</section>
 				</div>
 				<div class="box">
-					<header><h2><i class="fa fa-fire"></i>  Patterns</h2></header>
+					<header><h2><i class="fa fa-fire"></i>  Speed</h2></header>
 					<section>
-						<input type="text" class="dial" data-min="0" data-max="255" value="0">			
+						<input type="text" class="dial" data-min="0" data-max="255" value="0" data-thickness=".3">			
 
 
 					</section>
@@ -77,9 +138,15 @@
 			</div>
 			<div class="right-panel panel fog">
 				<div class="box">
-					<header><h2><i class="fa fa-fire"></i>  Patterns</h2></header>
+					<header><h2><i class="fa fa-fire"></i>  Colors</h2></header>
 					<section>
-					
+						<div id="colorpicker">
+							<div class="sliders" id="red"></div>
+							<div class="sliders" id="green"></div>
+							<div class="sliders" id="blue"></div>
+
+							<div class="result"></div>
+						</div>
 
 					</section>
 				</div>

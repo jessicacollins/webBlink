@@ -19,7 +19,8 @@ gulp.task('js', function() {
 
  gulp.src([
      './bower_components/jquery/dist/jquery.js',
-     './bower_components/jquery/dist/jquery.knob.min.js',     
+     './bower_components/jquery/dist/jquery.knob.min.js',
+     './bower_components/nouislider/distribute/jquery.nouislider.js',   
      // './bower_components/handlebars/handlebars.js',
  	    'js/src/**/*.js'
  	])
