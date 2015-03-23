@@ -5,28 +5,13 @@
 	<title>Control Panel</title>
 	<script src="./bower_components/jquery/dist/jquery.min.js"></script>
 	<script src="./bower_components/jquery-knob/js/jQuery.knob.js"></script>
-	<script src="./bower_components/switchery/dist/switchery.js"></script>
-	<script src="./bower_components/nouislider/distribute/jquery.nouislider.js"></script>
+	<script src="./bower_components/colpick/js/colpick.js" type="text/javascript"></script>
+
+
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="./bower_components/nouislider/src/jquery.nouislider.css">
-
-	<script>
-		$(function() {
-
-			// jQuery Knob
-			$(".dial").knob();
-
-			//jQuery Switched
-			var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-
-			elems.forEach(function(html) {
-			  var switchery = new Switchery(html);
-			});
-
-		})
-	</script>
+	<link rel="stylesheet" href="./bower_components/colpick/css/colpick.css" type="text/css"/>
 
 </head>
 <body>
@@ -112,14 +97,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Colors</h2></header>
 					<section>
-						<div id="colorpicker">
-							<div class="sliders" id="red"></div>
-							<div class="sliders" id="green"></div>
-							<div class="sliders" id="blue"></div>
-
-							<div class="result"></div>
-						</div>
-
+						<div id="picker"></div>
 					</section>
 				</div>
 				<div class="box">
@@ -136,5 +114,21 @@
 		
 		</footer>
 	</main>
+
+		<script>
+		$(function() {
+
+			// jQuery Knob
+			$(".dial").knob();
+
+			//jQuery Color Picker
+			$('#picker').colpick({
+				flat:true,
+				layout:'hex',
+				submit:0
+			});
+
+		})
+	</script>
 </body>
 </html>
