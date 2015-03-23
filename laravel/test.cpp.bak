@@ -1,0 +1,28 @@
+/* strtok example */
+#include <stdio.h>
+#include <string.h>
+#include <string>
+using namespace std;
+
+int main ()
+{
+  char str[] ="solid,6644ff,80,50";
+  const int numCommands = 4;
+  char* commands[numCommands];
+  char * pch;
+  pch = strtok (str,",");
+
+  int cnt = 0;
+  while (pch != NULL) {
+    printf ("%s\n",pch);
+    commands[cnt] = pch;
+    pch = strtok (NULL, ",");
+    cnt++;
+  }
+
+  for( int j = 0; j < numCommands; j++ ){
+    printf ("command: %s\n", commands[j]);
+  }
+
+  return 0;
+}
