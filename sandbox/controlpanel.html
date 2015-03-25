@@ -25,15 +25,14 @@
 				<ul><li>Home</li>
 				  <li>About</li>
 				  <li>
-				    Portfolio
+				    References
 				    <ul>
-				      <li>Web Design</li>
-				      <li>Web Development</li>
-				      <li>Illustrations</li>
+				      <li>Spark.io</li>
+				      <li>Ada Fruit</li>
 				    </ul>
 				  </li>
-				  <li>Blog</li>
 				  <li>Contact</li>
+				  <li>Login / Logout</li>
 				</ul>
 			</nav>
 
@@ -45,7 +44,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Patterns</h2></header>
 					<section>
-						<form>
+						<form class="patterns-form">
 							
 							<div>
 							  <input type="radio" id="radio01" name="radio" />
@@ -78,14 +77,14 @@
 			</div>
 			<div class="middle-panel panel glass">
 				<div class="box">
-					<header></header>
+					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
 						<input type="text" class="dial" data-min="0" data-max="255" data-fgColor="#66CC66" data-angleOffset=-125 data-angleArc=250>			
 
 					</section>
 				</div>
 				<div class="box">
-					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
+					<header><h2><i class="fa fa-fire"></i>  Intensity</h2></header>
 					<section>
 						<input type="text" class="dial" data-min="0" data-max="255" value="0" data-thickness=".3">			
 
@@ -96,15 +95,14 @@
 			<div class="right-panel panel fog">
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Colors</h2></header>
-					<section>
-						<div id="picker"></div>
+					<section >
+						<div class="colors" id="picker"></div>
 					</section>
 				</div>
 				<div class="box">
 					<header><h2><i class="fa fa-power-off"></i> Power Off</h2></header>
-					<section>
+					<section class="power">
 						<i class="fa fa-power-off fa-5x"></i>
-
 					</section>
 				</div>
 			</div>
@@ -125,7 +123,11 @@
 			$('#picker').colpick({
 				flat:true,
 				layout:'hex',
-				submit:0
+				submit:0, 
+				onChange: function(hex) {
+					console.log(hex);
+
+				}
 			});
 
 		})

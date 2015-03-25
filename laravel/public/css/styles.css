@@ -1,25 +1,228 @@
-main {
-  background-color: yellow; }
+body {
+  background-color: Gainsboro; }
 
-header {
+main {
+  width: 960px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-color: light-grey; }
+
+.primary-header {
   background: red;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  height: 100px; }
 
-nav a {
-  font-size: 14px;
+.primary-header div {
+  height: 50px;
+  background-color: grey;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0; }
+
+.logo a {
+  -webkit-animation: pulse 30s infinite alternate;
   text-decoration: none; }
 
-footer {
-  background-color: blue;
-  height: 100px;
-  margin: 0 auto;
-  position: relative;
+@-webkit-keyframes pulse {
+  0% {
+    color: #45CEEF; }
+
+  25% {
+    color: #FFF5A5; }
+
+  50% {
+    color: #FFD4DA; }
+
+  75% {
+    color: #99D2E4; }
+
+  100% {
+    color: #D8CAB4; } }
+
+nav {
+  text-align: center;
+  background-color: grey;
+  position: absolute;
+  right: 0px;
+  bottom: 0px; }
+
+.control-panel {
+  background-color: grey;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  margin-left: -5px;
+  margin-right: -5px;
+  overflow: hidden; }
+
+.panel {
+  float: left;
+  height: 600px;
+  margin: 5px; }
+
+.panel > * + * {
+  margin-top: 10px; }
+
+.left-panel {
+  background-color: magenta;
+  width: -webkit-calc(30% - 10px);
+  width: calc(30% - 10px); }
+
+.middle-panel {
+  background-color: green;
+  width: -webkit-calc(40% - 10px);
+  width: calc(40% - 10px); }
+
+.right-panel {
+  background-color: cyan;
+  width: -webkit-calc(30% - 10px);
+  width: calc(30% - 10px); }
+
+.box {
+  background-color: pink;
+  height: -webkit-calc(50% - 5px);
+  height: calc(50% - 5px); }
+
+.box header {
+  background: purple;
+  top: 0;
+  height: 25%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+
+.fog header {
+  background-color: purple;
+  color: DodgerBlue; }
+
+.glass header {
+  background-color: DarkSeaGreen;
+  color: LawnGreen; }
+
+.box h2 {
+  margin: 0;
+  padding: 30px; }
+
+.box section {
+  box-sizing: border-box;
+  height: 75%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 15px; }
+
+.fog section {
+  background-color: LightSteelBlue; }
+
+.glass section {
+  background-color: MediumPurple;
+  text-align: center;
+  padding: 10px; }
+
+.patterns-form {
+  margin-top: 10px;
+  margin-left: 10px; }
+
+.save-pattern {
+  background-color: Thistle;
+  padding: 20px 0px;
+  margin-top: 20px;
+  margin-left: 10px; }
+
+.save-pattern input {
+  border: 1px solid #aaa;
+  padding: 10px 10px;
+  border-radius: 2px;
+  width: 160px;
+  outline: none; }
+
+::-webkit-input-placeholder {
   text-align: center; }
 
-.content {
-  background-color: pink;
+:-moz-placeholder {
+  /* Firefox 18- */
+  text-align: center; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  text-align: center; }
+
+:-ms-input-placeholder {
+  text-align: center; }
+
+.save-pattern button {
+  padding: 10px;
+  background: #4479BA;
+  color: #FFF;
+  width: 182px;
+  margin-top: 10px; }
+
+.power {
+  text-align: center; }
+  .power i {
+    padding: 50px; }
+
+.dial {
+  outline: none; }
+
+.colors {
+  margin-left: 12px;
+  margin-top: -5px; }
+
+ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+
+ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: PaleGreen;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+
+ul li:hover {
+  background: #555;
+  color: #fff; }
+
+ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s; }
+
+ul li ul li {
+  background: #555;
+  display: block;
+  color: #fff;
+  text-shadow: 0 -1px 0 #000; }
+
+ul li ul li:hover {
+  background: #666; }
+
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible; }
+
+.login {
   width: 960px;
+  background-color: DarkCyan;
   margin: 0 auto;
-  height: 400px;
-  position: relative; }
+  margin-top: 40px; }

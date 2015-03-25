@@ -141,39 +141,71 @@ nav {
 	text-align: center;
 }
 
+.patterns-form {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
 .save-pattern {
 	background-color: Thistle;
 	padding: 20px 0px;
-	padding-top: 20px;
-	text-align: center;
 	margin-top: 20px;
+  margin-left: 10px;
 }
 
 .save-pattern input {
 	border: 1px solid #aaa;
 	padding: 10px 10px;
 	border-radius: 2px;
-	width: 155px;
+	width: 160px;
+  outline: none;
 }
 
+  ::-webkit-input-placeholder {
+     text-align: center;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     text-align: center;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     text-align: center;  
+  }
+
+  :-ms-input-placeholder {  
+     text-align: center; 
+  }
+
+.save-pattern button  {
+    padding: 10px;
+    background: #4479BA;
+    color: #FFF;
+    width: 182px;
+    margin-top: 10px;
+}
+
+.power {
+  text-align: center;
+  
+  i {
+    padding: 50px;
+  }
+}
 
 .dial {
 	outline: none;
 }
 
-.save-pattern button  {
-    padding: 10px 10px;
-    background: #4479BA;
-    color: #FFF;
-    width: 177px;
-    margin-top: 4px;
+.colors {
+	margin-left: 12px;
+	margin-top: -5px;
 }
 
-
 // Radio Buttons
-$DarkBrown: #292321;
+$uncheckedColor: #292321;
 
-$Orange: #00FFFF;
+$checkedColor: #00FFFF;
 
 div {
   margin:0 0 0.75em 0;
@@ -183,7 +215,7 @@ input[type="radio"] {
     display:none;
 }
 input[type="radio"] + label {
-    color: $DarkBrown;
+    color: $uncheckedColor;
     font-family:Arial, sans-serif;
     font-size:14px;
 }
@@ -199,11 +231,11 @@ input[type="radio"] + label span {
 }
 
 input[type="radio"] + label span {
-     background-color:$DarkBrown;
+     background-color:$uncheckedColor;
 }
 
 input[type="radio"]:checked + label span{
-     background-color:$Orange;
+     background-color:$checkedColor;
 }
 
 input[type="radio"] + label span,
@@ -213,70 +245,6 @@ input[type="radio"]:checked + label span {
   -moz-transition:background-color 0.4s linear;
   transition:background-color 0.4s linear;
 }
-
-
-/*
- *
- * Main stylesheet for Switchery.
- * http://abpetkov.github.io/switchery/
- *
- */
-
-/* Switchery defaults. */
-
-// .switchery {
-//   background-color: #fff;
-//   border: 1px solid #dfdfdf;
-//   border-radius: 20px;
-//   cursor: pointer;
-//   display: inline-block;
-//   height: 30px;
-//   position: relative;
-//   vertical-align: middle;
-//   width: 50px;
-
-//   -moz-user-select: none;
-//   -khtml-user-select: none;
-//   -webkit-user-select: none;
-//   -ms-user-select: none;
-//   user-select: none;
-//   box-sizing: content-box;
-//   background-clip: content-box;
-// }
-
-// .switchery > small {
-//   background: #fff;
-//   border-radius: 100%;
-//   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-//   height: 30px;
-//   position: absolute;
-//   top: 0;
-//   width: 30px;
-// }
-
-// /* Switchery sizes. */
-
-// .switchery-small {
-//   border-radius: 20px;
-//   height: 20px;
-//   width: 33px;
-// }
-
-// .switchery-small > small {
-//   height: 20px;
-//   width: 20px;
-// }
-
-// .switchery-large {
-//   border-radius: 40px;
-//   height: 40px;
-//   width: 66px;
-// }
-
-// .switchery-large > small {
-//   height: 40px;
-//   width: 40px;
-// }
 
 //jQuery Menu
 ul {
@@ -336,6 +304,13 @@ ul li:hover ul {
   display: block;
   opacity: 1;
   visibility: visible;
+}
+
+.login {
+  background-color: red;
+  width: 960px;
+  margin: 0 auto;
+
 }
 
 
