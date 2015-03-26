@@ -1,0 +1,31 @@
+Get params
+
+
+1.) Set each params
+2.) listen for change on each controller
+
+
+var color = NULL;
+var intensity = ''
+var speed
+
+colorChange(function (v)) {
+	color = v;
+	sendParams();
+}
+
+sendParams() {
+	$.get('api/setParams/' + getParams, function(data)) {
+	console.log(data);
+	}
+}
+
+getParams () {
+	var colorString - color.r + ',' + color.g + ',' + color.b 
+	var params = colorString + ',' + intensity + ',' + speed;
+	return params;
+}
+
+params gets passed to controller in the string format that the spark params is expecting. 
+
+(A less desirable alternative would be to use join (js) or implode (php) to parse the params. )

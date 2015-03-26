@@ -12,7 +12,7 @@ class PatternController extends Controller {
 	private function sendSparkCommand($command, $params=[]) {
 
 		if ($this->test) {
-			return 'Test mode:' . $command;
+			return 'Test mode:' . $command . $params;
 		}
 
 

@@ -12,9 +12,18 @@ $(function() {
 		submit:0, 
 		onChange: function(hex) {
 			console.log(hex);
+			// $.get('api/setpattern/')
 
 		}
 	});
+
+	cal.data('colpick').onChange.apply(cal.parent(), [col, hsbToHex(col), hsbToRgb(col),cal.data('colpick').el]);
+
+	// LED Variables
+
+	var color = '';
+	var speed = '';
+	var delay = '';
 
 	//Set Pattern
 	$('input[name*="pattern"]').click(function(event) {
@@ -32,17 +41,22 @@ $(function() {
 		});
 	});
 
-	// Set Intensity
+	//Log intensity
+
+	// $('.dial').trigger('configure', {
+	//     'change': function (v) {
+	//         console.log('new value' + Math.round(v));
+	//     }
+	// });
+
 	$('.dial').trigger('configure', {
 	    'change': function (v) {
-	        console.log('new value' + v);
-	        var pattern_name = 'solid'
-	    	$.get('api/setpattern/' + pattern_name, function(data)) {
-
-	    	}
+	    	var pattern_name = 'solid';
+	        var params = Math.round(v);
+	        $.get('/api/setpattern/' + pattern_name + '/' + params, function(data){
+	        	console.log(data);
+	        });
 	    }
 	});
-
-
 
 })
