@@ -42,14 +42,14 @@
 				<div class="box">
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
-						<input type="text" class="dial" data-min="0" data-max="255" value="0" data-thickness=".3">			
+						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-thickness=".3">			
 
 					</section>
 				</div>
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Intensity</h2></header>
 					<section>
-						<input type="text" class="dial" data-min="0" data-max="255" value="0" data-thickness=".3">			
+						<input type="text" class="dial intensity" data-min="0" data-max="255" value="0" data-thickness=".3">			
 
 
 					</section>

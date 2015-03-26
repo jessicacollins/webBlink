@@ -23,6 +23,7 @@ Route::controllers([
 
 Route::get('api/setpattern/{pattern_name}', 'PatternController@setPattern');
 Route::get('api/setpattern/{pattern_name}/{params}', 'PatternController@setPattern');
+Route::get('api/setparams/{params}', 'PatternController@setPattern');
 
 
 // Route::get('/blink/{state}', function($state) {

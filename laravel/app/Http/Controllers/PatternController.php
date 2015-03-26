@@ -5,14 +5,19 @@ class PatternController extends Controller {
 
 	protected $test = true;
 
+
+	public function setParams($params) {
+		return $this->sendSparkCommand($params);
+	}
+
 	public function setPattern($pattern_name, $params=[]) {
 		return $this->sendSparkCommand($pattern_name, $params);
 	}
 
-	private function sendSparkCommand($command, $params=[]) {
+	private function sendSparkCommand($params) {
 
 		if ($this->test) {
-			return 'Test mode:' . $command . $params;
+			return 'Test mode:' . $params;
 		}
 
 
@@ -21,10 +26,10 @@ class PatternController extends Controller {
 		// Set some options - we are passing in a useragent too here
 		curl_setopt_array($curl, array(
 		    CURLOPT_RETURNTRANSFER => 1,
-		    CURLOPT_URL => 'https://api.spark.io/v1/devices/55ff6d065075555318171787/' . $command,
+		    CURLOPT_URL => 'https://api.spark.io/v1/devices/55ff6d065075555318171787/' . $params,
 		    CURLOPT_POST => 1,
 		    CURLOPT_POSTFIELDS => array(
-		        'params' => $command
+		        'params' => $params
 		    )
 		));
 

@@ -2,6 +2,13 @@
 
 $(function() {
 
+	// LED Variables
+	var color = '';
+	var speed = '';
+	var intensity = '';
+	var pattern = '';
+	params = '';
+
 	// jQuery Knob
 	$(".dial").knob();
 
@@ -10,53 +17,53 @@ $(function() {
 		flat:true,
 		layout:'hex',
 		submit:0, 
-		onChange: function(hex) {
-			console.log(hex);
-			// $.get('api/setpattern/')
-
+		onChange: function(hsb, hex, rgb) {
+			color = hex;
+			sendParams();
 		}
 	});
 
-	cal.data('colpick').onChange.apply(cal.parent(), [col, hsbToHex(col), hsbToRgb(col),cal.data('colpick').el]);
-
-	// LED Variables
-
-	var color = '';
-	var speed = '';
-	var delay = '';
-
 	//Set Pattern
 	$('input[name*="pattern"]').click(function(event) {
-		var pattern_name = event.currentTarget.value;
-		$.get('api/setpattern/' + pattern_name, function(data) {
-			console.log(data);	
-		});
+		pattern = event.currentTarget.value;
+		sendParams();
 	});
 
 	//Set Off
 	$('.off').click(function(event) {
-		var pattern_name = 'off';
-		$.get('api/setpattern/' + pattern_name, function(data) {
-			console.log(data);	
-		});
+		pattern = 'off';
+		color = '';
+		intensity = '';
+		speed = '';
+		sendParams();
 	});
 
 	//Log intensity
-
-	// $('.dial').trigger('configure', {
-	//     'change': function (v) {
-	//         console.log('new value' + Math.round(v));
-	//     }
-	// });
-
-	$('.dial').trigger('configure', {
+	$('.intensity').trigger('configure', {
 	    'change': function (v) {
-	    	var pattern_name = 'solid';
-	        var params = Math.round(v);
-	        $.get('/api/setpattern/' + pattern_name + '/' + params, function(data){
-	        	console.log(data);
-	        });
+	        intensity = Math.round(v);
+	        sendParams();
 	    }
 	});
+	
+	//Log Speed
+	$('.speed').trigger('configure', {
+	    'change': function (v) {
+	        speed = Math.round(v);
+	        sendParams();
+	    }
+	});
+
+	function getParams () {
+		params = pattern + ',' + color + ',' + intensity + ',' + speed;
+		return params;
+	}
+
+	function sendParams () {
+		getParams();
+		$.get('api/setparams/' + params, function(data) {
+			console.log(data);
+		});
+	}
 
 })
