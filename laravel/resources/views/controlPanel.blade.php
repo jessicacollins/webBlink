@@ -9,19 +9,22 @@
 					<section>
 						<form class="patterns-form">
 							
+							@foreach($patterns as $pattern)
+
+{{-- 							    <label class="special-radio">
+							        <input type="radio" name="pattern" value="{{$pattern->pattern_type_id}}">
+							        <div class="toggle">
+							            <div></div>
+							        </div>
+							        {{$pattern->pattern_name}}
+							    </label> --}}
+						
 							<div>
-							  <input type="radio" value="rainbow" name="pattern" />
-							  <label for="rainbow"><span id="rainbow"></span>Rainbow Pattern</label>
+							  <input type="radio" value="{{$pattern->pattern_id}}" name="pattern" />
+							  <label><span></span>{{$pattern->pattern_name}}</label>	
 							</div>
 
-							<div>
-							 <input type="radio" value="chase" name="pattern" />
-							 <label for="chase"><span></span>Chase Pattern</label>
-							</div>
-							<div>
-							 <input type="radio" value="cylon" name="pattern" />
-							 <label for="cylon"><span></span>Cylon Pattern</label>
-							</div>
+							@endforeach
 							
 						</form>
 					</section>
@@ -31,8 +34,14 @@
 					<section>
 						<div class="save-pattern">
 							<form action="">
+						<select class="pattern_select">
+							@foreach($p_types as $p_type)
+							<option value="{{$p_type->pattern_type_id}}">{{$p_type->display_name}}</option>
+								
+							@endforeach
+						</select>
 								<input type="text" name="pattern-name" placeholder="Pattern Name">
-								<button>Save</button>
+								<button class="save-pattern">Save</button>
 							</form>
 						</div>
 					</section>
@@ -42,14 +51,14 @@
 				<div class="box">
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
-						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-thickness=".3">			
+						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=-160 data-thickness=".3">			
 
 					</section>
 				</div>
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Intensity</h2></header>
 					<section>
-						<input type="text" class="dial intensity" data-min="0" data-max="255" value="0" data-thickness=".3">			
+						<input type="text" class="dial intensity" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" inputColor="#41dee0">			
 
 
 					</section>

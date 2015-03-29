@@ -1,10 +1,53 @@
 <?php namespace App\Http\Controllers;
 
+use Request;
+use App\Models\Pattern;
+use DB;
 
 class PatternController extends Controller {
 
 	protected $test = true;
 
+
+	public function getPattern($pattern_id) {
+		$pattern = new Pattern($pattern_id);
+		// print_r($pattern->getData());
+
+		return response()->json(['color' => $pattern->color, 'speed' => $pattern->speed, 'intensity' =>$pattern->intensity]);
+		// return $pattern;
+	}
+
+	public function savePattern() {
+		$color = Request::input('color');
+		$speed = Request::input('speed');
+		$intensity = Request::input('intensity');
+		$pattern_name = Request::input('pattern_name');
+		$pattern_type_id = Request::input('pattern_type_id');
+
+		$pattern = new Pattern();
+		$pattern->color = $color;
+		$pattern->speed = $speed;
+		$pattern->intensity = $intensity;
+		$pattern->pattern_name = $pattern_name;
+		$pattern->pattern_type_id = $pattern_type_id;
+		$pattern->save();
+	
+
+		return response()->json(['name' => $pattern_name, 'id' => $pattern_type_id]);
+
+
+	}
+
+  //   public function deletePattern($pattern_id) {
+  //   	$sql = '
+		// 	DELETE FROM pattern WHERE pattern_id = :pattern_id
+  //   	';
+  //   	$delete_values = ['pattern_id' => $pattern_id]
+		
+		// $results = DB::delete($sql, $delete_values);
+
+		// return redirect('controlPanel');
+  //   }
 
 	public function setParams($params) {
 		return $this->sendSparkCommand($params);
@@ -18,6 +61,8 @@ class PatternController extends Controller {
 
 		if ($this->test) {
 			return 'Test mode:' . $params;
+			// return 'https://api.spark.io/v1/devices/55ff6d065075555318171787/neo/' . $params;
+
 		}
 
 
@@ -26,14 +71,15 @@ class PatternController extends Controller {
 		// Set some options - we are passing in a useragent too here
 		curl_setopt_array($curl, array(
 		    CURLOPT_RETURNTRANSFER => 1,
-		    CURLOPT_URL => 'https://api.spark.io/v1/devices/55ff6d065075555318171787/' . $params,
+		    CURLOPT_URL => 'https://api.spark.io/v1/devices/55ff6d065075555318171787/neo/',
 		    CURLOPT_POST => 1,
 		    CURLOPT_POSTFIELDS => array(
+		    	// 'access_token' => '2e8d1926d5f104b430cd374cccef8e4729c38f43',
 		        'params' => $params
 		    )
 		));
 
-		curl_setopt($curl,CURLOPT_HTTPHEADER,array('Authorization: Bearer 9669e389e4b2fc8029a746f3f760042369f5a2c4')); 
+		curl_setopt($curl,CURLOPT_HTTPHEADER,array('Authorization: Bearer 2e8d1926d5f104b430cd374cccef8e4729c38f43')); 
 
 		// Send the request & save response to $resp
 		$resp = curl_exec($curl);
