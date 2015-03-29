@@ -12,7 +12,6 @@ $(function() {
 	// jQuery Knob
 	$(".dial").knob();
 
-
 	//jQuery Color Picker
 	$('#picker').colpick({
 		flat:true,
@@ -30,19 +29,16 @@ $(function() {
 	});
 
 	//Set Pattern
-	$('input[name="pattern"]').click(function(event) {
+	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
 		pattern_type_id = event.currentTarget.value;
 		if (pattern_type_id == '1') {
 			$('#picker').hide();
-			// $('#picker').toggleClass("blur");
 			color = null;
 		} else {
 			$('#picker').show();
 		}
-
 		sendParams();
 	});
-
 
 	//Set Off
 	$('.off').click(function(event) {
@@ -117,20 +113,24 @@ $(function() {
 	            	$( ".patterns-form" ).append(
 					'<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>'
 					);
-	            	sendParams();
 	            }
 	        });			
 		}
 	}
 
 	// get Custom Pattern Settings
-	$('input[name="pattern"]').click(function(event) {
+	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
 		pattern_id = event.currentTarget.value;
 		$.get('api/getpattern/' + pattern_id, function(data) {
-		console.log(data.color);
 			$('#picker').colpickSetColor(data.color,true);
 		    $('.speed').val(data.speed).trigger('change');
-		    $('.intensity').val(data.intensity).trigger('change');
+			$('.intensity').val(data.intensity).trigger('change');
+		    $('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
+		    $('.pattern_select').val(data.pattern_type_id).attr("selected");
+			
+			speed = data.speed;
+			intensity = data.intensity;
+			sendParams();
 		});
 	});
 })
