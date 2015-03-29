@@ -7,7 +7,7 @@ $(function() {
 	var speed = null;
 	var intensity = null;
 	var pattern_type_id = null;
-	params = null;
+
 
 	// jQuery Knob
 	$(".dial").knob();
@@ -70,6 +70,7 @@ $(function() {
 
 	//get Pattern parameters	
 	function getParams () {
+		var params = null;
 		if (pattern_type_id == '1') {
 			params = pattern_type_id + ',' + speed;
 		} else {
@@ -80,7 +81,8 @@ $(function() {
 
 	//Send pattern parameters
 	function sendParams () {
-		getParams();
+		
+		var params = getParams();
 		$.get('api/setparams/' + params, function(data) {
 			console.log(data);
 		});
@@ -120,7 +122,16 @@ $(function() {
 
 	// get Custom Pattern Settings
 	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
+	
 		pattern_id = event.currentTarget.value;
+		// event.preventDefault();
+		// $('button.save-pattern').hide();
+
+	 //    $( ".save-pattern" ).append(
+	 //    '<input type="button" class="update-pattern" value="Update"/>'
+		// );
+
+
 		$.get('api/getpattern/' + pattern_id, function(data) {
 			$('#picker').colpickSetColor(data.color,true);
 		    $('.speed').val(data.speed).trigger('change');
@@ -130,6 +141,8 @@ $(function() {
 			
 			speed = data.speed;
 			intensity = data.intensity;
+			color = data.color;
+			pattern_type_id = data.pattern_type_id; 
 			sendParams();
 		});
 	});

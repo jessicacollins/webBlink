@@ -39,6 +39,30 @@ class PatternController extends Controller {
 
 	}
 
+
+// 	public function updatePattern(pattern_id) {
+
+// 		$color = Request::input('color');
+// 		$speed = Request::input('speed');
+// 		$intensity = Request::input('intensity');
+// 		$pattern_name = Request::input('pattern_name');
+// 		$pattern_type_id = Request::input('pattern_type_id');
+
+// 		$pattern = new Pattern();
+// 		$pattern->color = $color;
+// 		$pattern->speed = $speed;
+// 		$pattern->intensity = $intensity;
+// 		$pattern->pattern_name = $pattern_name;
+// 		$pattern->pattern_type_id = $pattern_type_id;
+// 		$pattern->save();
+
+
+// // 		$user = new User(21);
+// // $user->first_name = 'Bill';
+// // $user->password = 'sorryhillary';
+// // $user->save();
+// 	}
+
   //   public function deletePattern($pattern_id) {
   //   	$sql = '
 		// 	DELETE FROM pattern WHERE pattern_id = :pattern_id

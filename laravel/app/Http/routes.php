@@ -17,8 +17,7 @@ Route::get('api/setpattern/{pattern_name}', 'PatternController@setPattern');
 Route::get('api/setpattern/{pattern_name}/{params}', 'PatternController@setPattern');
 Route::get('api/setparams/{params}', 'PatternController@setParams');
 Route::get('api/savepattern', 'PatternController@savePattern');
-// Route::get('controlpanel', 'PatternController@getPatterns');
-// Route::get('api/getpattern', 'PatternController@getPatterns');
+// Route::get('api/updatepattern{pattern_id}', 'PatternController@updatePattern');
 Route::get('api/getpattern/{pattern_id}', 'PatternController@getPattern');
 // Route::get('delete/{pattern_id}', 'PatternController@deletePattern');
 
@@ -35,8 +34,6 @@ Route::get('register', function () {
 // Route::get('controlpanel', function () {
 // 	return view('controlPanel');
 // });
-
-// Route::get('controlpanel', 'PatternController@getPattern');
 
 Route::get('controlpanel', function () {
     $patterns = Pattern::all();
