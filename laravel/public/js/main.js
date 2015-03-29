@@ -139,6 +139,36 @@ $(function() {
 		updatePattern();
 	});
 
+	function updatePattern () {
+		var pattern_id = $(".patterns-form input[type='radio']:checked").val();		
+		var pattern_name = $('input[name="pattern-name"]').val();
+		console.log(pattern_id);
+		if (pattern_id == null) {
+			console.log('Not valid pattern id');
+		} else {
+			$.ajax({
+	            url: '/api/updatepattern/' + pattern_id,
+	            type: 'GET',
+
+	            data: { 
+	            	color: color,
+	            	speed: speed,
+	            	intensity: intensity,
+	            	pattern_type_id: pattern_type_id,
+	            	pattern_name: pattern_name
+	             },
+	            success: function(data) {
+	    //         	$( ".patterns-form" ).append(
+					// '<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>'
+					// );
+	            	console.log(data);
+	            	// $(".patterns-form input[type='radio']:checked").html('<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>')
+	            }
+	        });	
+		}
+	}
+
+
 	// get Custom Pattern Settings
 	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
 	
