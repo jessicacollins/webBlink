@@ -34,9 +34,23 @@ $(function() {
 		if (pattern_type_id == '1') {
 			$('#picker').hide();
 			color = null;
+
 		} else {
 			$('#picker').show();
 		}
+
+		if (pattern_type_id <= 7) {
+			$('button.save-pattern').show();
+			$('button.update-pattern').hide();
+			$('button.delete-pattern').hide();
+			// $('input[name="pattern-name"]').removeAttr('value');
+
+		} else {
+			$('button.save-pattern').hide();
+			$('button.update-pattern').show();
+			$('button.delete-pattern').show();			
+		}
+
 		sendParams();
 	});
 
@@ -120,17 +134,16 @@ $(function() {
 		}
 	}
 
+	$('button.update-pattern').click(function(event) {
+		event.preventDefault();
+		updatePattern();
+	});
+
 	// get Custom Pattern Settings
 	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
 	
 		pattern_id = event.currentTarget.value;
 		// event.preventDefault();
-		// $('button.save-pattern').hide();
-
-	 //    $( ".save-pattern" ).append(
-	 //    '<input type="button" class="update-pattern" value="Update"/>'
-		// );
-
 
 		$.get('api/getpattern/' + pattern_id, function(data) {
 			$('#picker').colpickSetColor(data.color,true);
@@ -139,11 +152,13 @@ $(function() {
 		    $('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
 		    $('.pattern_select').val(data.pattern_type_id).attr("selected");
 			
+		    console.log(pattern_id);
+
 			speed = data.speed;
 			intensity = data.intensity;
 			color = data.color;
 			pattern_type_id = data.pattern_type_id; 
-			sendParams();
+			// sendParams();
 		});
 	});
 })

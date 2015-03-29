@@ -42,6 +42,8 @@
 						</select>
 								<input type="text" name="pattern-name" placeholder="Pattern Name">
 								<button class="save-pattern">Save</button>
+								<button class="update-pattern">Update</button>
+								<button class="delete-pattern">Delete</button>
 							</form>
 						</div>
 					</section>
