@@ -49,10 +49,7 @@ main {
        75% {color: #99D2E4;}
        100% {color: #D8CAB4;}
   }
-
-
 nav {
-	// height: 50px;
 	text-align: center;
   background-color: transparent;
 	position: absolute;
@@ -62,7 +59,6 @@ nav {
 }
 
 .control-panel {
-
   background-color: transparent;
 	margin-top: 40px;
 	margin-bottom: 50px;
@@ -104,7 +100,6 @@ nav {
 }
 .box {
 	height: calc(50% - 5px);
-
 }
 
 .box header {
@@ -136,8 +131,6 @@ nav {
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
 	padding: 15px;
-
-
 }
 
 .fog section {
@@ -145,7 +138,6 @@ nav {
   // -webkit-filter: blur(5px);
   // -moz-filter: blur(5px);
   // -o-filter: blur(5px);
-
 }
 
 .glass section {
@@ -160,7 +152,8 @@ nav {
 
 }
 .patterns-scroll {
-
+  height: 125px;
+  overflow: scroll;
 }
 .save-pattern {
 
@@ -203,8 +196,6 @@ nav {
     width: 182px;
     margin-top: 10px;
     margin-left: 0;
-    
-
 }
 
 .pattern_select {
@@ -219,6 +210,18 @@ nav {
   display: none;
 }
 
+.new-pattern {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222222;
+    width: 182px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.pattern-radio {
+
+}
 .power {
   text-align: center;
   
@@ -234,84 +237,94 @@ nav {
 }
 
 .colors {
-	margin-left: 12px;
+	margin-left: 20px;
 	margin-top: -5px;
 }
 
 //Fancy Radio Button
 
+// .special-radio input {
+//     display: none;
+// }
 
-.special-radio input {
-    display: none;
-}
+// .toggle {
+//     width: 2em;
+//     height: 1em;
+//     background: linear-gradient(#888, #eee);
+//     border-radius: 25px;
+// }
 
-.toggle {
-    width: 2em;
-    height: 1em;
-    background: linear-gradient(#888, #eee);
-    border-radius: 25px;
-}
+// .toggle div {
+//     width: 1em;
+//     height: 1em;
+//     border-radius: 50%;
+//     background: linear-gradient(#eee, #888);
+//     transition: all 1s;
+// }
 
-.toggle div {
-    width: 1em;
-    height: 1em;
-    border-radius: 50%;
-    background: linear-gradient(#eee, #888);
-    transition: all 1s;
-}
+// .special-radio input:checked ~ .toggle div {
+//     transform: translateX(1em);
+//     transition: all 1s;
+// }
 
-.special-radio input:checked ~ .toggle div {
-    transform: translateX(1em);
-    transition: all 1s;
-}
+// .radio-name {
+//   display: inline-block;
+
+// }
 
 
 
 // Radio Buttons
-// $uncheckedColor: #292321;
+$uncheckedColor: #292321;
 
-// $checkedColor: #00FFFF;
+$checkedColor: #00FFFF;
 
-// div {
-//   margin:0 0 0.75em 0;
-// }
+div {
+  margin:0 0 0.5em 0;
+}
 
-// input[type="radio"] {
-//     display:none;
-// }
-// input[type="radio"] + label {
-//     color: $uncheckedColor;
-//     font-family:Arial, sans-serif;
-//     font-size:14px;
-// }
-// input[type="radio"] + label span {
-//     display:inline-block;
-//     width:19px;
-//     height:19px;
-//     margin:-1px 4px 0 0;
-//     vertical-align:middle;
-//     cursor:pointer;
-//     -moz-border-radius:  50%;
-//     border-radius:  50%;
-// }
+input[type="radio"] {
+    display:none;
+}
+input[type="radio"] + label {
+    color: $uncheckedColor;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+}
+input[type="radio"] + label span {
+    display:inline-block;
+    width:19px;
+    height:19px;
+    margin:-1px 4px 0 0;
+    vertical-align:middle;
+    cursor:pointer;
+    -moz-border-radius:  50%;
+    border-radius:  50%;
+}
 
-// input[type="radio"] + label span {
-//      background-color:$uncheckedColor;
-// }
+input[type="radio"] + label span {
+     background-color:$uncheckedColor;
+}
 
-// input[type="radio"]:checked + label span{
-//      background-color:$checkedColor;
-// }
+input[type="radio"]:checked + label span{
+     background-color:$checkedColor;
+}
 
-// input[type="radio"] + label span,
-// input[type="radio"]:checked + label span {
-//   -webkit-transition:background-color 0.4s linear;
-//   -o-transition:background-color 0.4s linear;
-//   -moz-transition:background-color 0.4s linear;
-//   transition:background-color 0.4s linear;
-// }
+input[type="radio"] + label span,
+input[type="radio"]:checked + label span {
+  -webkit-transition:background-color 0.4s linear;
+  -o-transition:background-color 0.4s linear;
+  -moz-transition:background-color 0.4s linear;
+  transition:background-color 0.4s linear;
+}
 
 //jQuery Menu
+
+nav a {
+  color:  #F8F8F8;  
+  text-decoration: none;
+
+}
 ul {
   text-align: left;
   display: inline;
@@ -389,11 +402,10 @@ ul li:hover ul {
   margin-top: 40px; 
 }
 
-#picker {
-  padding:0;
-  border:0;
-  width: 100px;
-  height:20px;
+select {
+  // -webkit-appearance: none;
+  // -webkit-border-radius: 0px;
+// border: 1px ridge rgb(169, 169, 169);
 }
 
 // .blur {

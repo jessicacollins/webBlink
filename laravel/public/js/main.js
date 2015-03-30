@@ -7,6 +7,7 @@ $(function() {
 	var speed = null;
 	var intensity = null;
 	var pattern_type_id = null;
+	var pattern_changed = false;
 
 
 	// jQuery Knob
@@ -18,15 +19,15 @@ $(function() {
 		layout:'hex',
 		submit:0,
 		onChange: function(hsb, hex, rgb) {
-			if (pattern_type_id == null) {
-				pattern_name = '5';
-				color = hex;
-			} else {
-				color = hex;
+			if (! pattern_changed){
+				if (pattern_type_id == null) {
+					pattern_name = '5';
+					color = hex;
+				} else {
+					color = hex;
+				}
+				sendParams();
 			}
-			sendParams();
-			console.log(color);
-			// $('body').css('background-color', + color);
 		}
 	});
 
@@ -132,12 +133,12 @@ $(function() {
 	            	$( ".patterns-form" ).append(
 					'<div><input type="radio" id="pattern-button-' + buttonId + '"' + ' value="' + data.id + '" name="pattern" checked /><label for="pattern-button-' + buttonId + '"' + '><span></span> ' + data.name + '</label></div>'
 					);
-
 	            }
 	        });			
 		}
 	}
 
+	//Update a pattern
 	$('button.update-pattern').click(function(event) {
 		event.preventDefault();
 		updatePattern();
@@ -167,12 +168,13 @@ $(function() {
 					// );
 	            	console.log(data);
 	            	// $(".patterns-form input[type='radio']:checked").html('<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>')
+	            	// $('#' + data.id + '').html('<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>')
 	            }
 	        });	
 		}
 	}
 
-
+	//Delete a Pattern
 	$('button.delete-pattern').click(function(event) {
 		event.preventDefault();
 		deletePattern();
@@ -205,23 +207,29 @@ $(function() {
 		$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
 
 			pattern_id = event.currentTarget.value;
-			// event.preventDefault();
 
 			$.get('api/getpattern/' + pattern_id, function(data) {
+				pattern_changed = true;
 				$('#picker').colpickSetColor(data.color,true);
 			    $('.speed').val(data.speed).trigger('change');
 				$('.intensity').val(data.intensity).trigger('change');
 			    $('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
 			    $('.pattern_select').val(data.pattern_type_id).attr("selected");
-				
+				pattern_changed = false;
 			    console.log(pattern_id);
 
 				speed = data.speed;
 				intensity = data.intensity;
 				color = data.color;
 				pattern_type_id = data.pattern_type_id; 
-				// sendParams();
 			});
 		});
+
+	// Change color of off button on hover
+	$(".off-hover").hover(function(){
+	    $(".off-hover").css("color", "#00FFFF");
+	    }, function(){
+	    $(".off-hover").css("color", "rgba(255, 255, 255, 0.9)");
+	});
 
 })

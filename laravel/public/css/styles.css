@@ -119,6 +119,10 @@ nav {
   margin-top: 10px;
   margin-left: 10px; }
 
+.patterns-scroll {
+  height: 125px;
+  overflow: scroll; }
+
 .save-pattern {
   padding: 20px 0px;
   margin-top: 0;
@@ -166,6 +170,14 @@ nav {
 .update-pattern, .delete-pattern {
   display: none; }
 
+.new-pattern {
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222222;
+  width: 182px;
+  margin-top: 10px;
+  margin-left: 10px; }
+
 .power {
   text-align: center; }
   .power i {
@@ -176,34 +188,42 @@ nav {
   outline: none; }
 
 .colors {
-  margin-left: 12px;
+  margin-left: 20px;
   margin-top: -5px; }
 
-.special-radio input {
+div {
+  margin: 0 0 0.5em 0; }
+
+input[type="radio"] {
   display: none; }
 
-.toggle {
-  width: 2em;
-  height: 1em;
-  background: -webkit-linear-gradient(#888, #eee);
-  background: linear-gradient(#888, #eee);
-  border-radius: 25px; }
+input[type="radio"] + label {
+  color: #292321;
+  font-family: Arial, sans-serif;
+  font-size: 14px; }
 
-.toggle div {
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  background: -webkit-linear-gradient(#eee, #888);
-  background: linear-gradient(#eee, #888);
-  -webkit-transition: all 1s;
-  transition: all 1s; }
+input[type="radio"] + label span {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%; }
 
-.special-radio input:checked ~ .toggle div {
-  -webkit-transform: translateX(1em);
-  -ms-transform: translateX(1em);
-  transform: translateX(1em);
-  -webkit-transition: all 1s;
-  transition: all 1s; }
+input[type="radio"] + label span {
+  background-color: #292321; }
+
+input[type="radio"]:checked + label span {
+  background-color: #00FFFF; }
+
+input[type="radio"] + label span, input[type="radio"]:checked + label span {
+  -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear; }
+
+nav a {
+  color: #F8F8F8;
+  text-decoration: none; }
 
 ul {
   text-align: left;
@@ -267,8 +287,3 @@ ul li:hover ul {
   margin: 0 auto;
   margin-top: 40px; }
 
-#picker {
-  padding: 0;
-  border: 0;
-  width: 100px;
-  height: 20px; }
