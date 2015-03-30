@@ -16,7 +16,7 @@ $(function() {
 	$('#picker').colpick({
 		flat:true,
 		layout:'hex',
-		submit:0, 
+		submit:0,
 		onChange: function(hsb, hex, rgb) {
 			if (pattern_type_id == null) {
 				pattern_name = '5';

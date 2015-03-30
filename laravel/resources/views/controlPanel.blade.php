@@ -7,26 +7,25 @@
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Patterns</h2></header>
 					<section>
-						<form class="patterns-form">
-							
-							@foreach($patterns as $pattern)
+						<div class="patterns-scroll">	
+							<form class="patterns-form">
+								@foreach($patterns as $pattern)
 
-{{-- 							    <label class="special-radio">
-							        <input type="radio" name="pattern" value="{{$pattern->pattern_type_id}}">
-							        <div class="toggle">
-							            <div></div>
-							        </div>
-							        {{$pattern->pattern_name}}
-							    </label> --}}
-						
-							<div>
-							  <input type="radio" value="{{$pattern->pattern_id}}" name="pattern" />
-							  <label><span></span>{{$pattern->pattern_name}}</label>	
-							</div>
-
-							@endforeach
+{{-- 								    <label class="special-radio">
+								        <input type="radio" name="pattern" value="{{$pattern->pattern_type_id}}">
+								        <div class="toggle">
+								            <div></div>
+								        </div>
+								        {{$pattern->pattern_name}}
+								    </label> --}}
 							
-						</form>
+								<div>
+								  <input type="radio" value="{{$pattern->pattern_id}}" name="pattern" />
+								  <label><span></span>{{$pattern->pattern_name}}</label>
+								</div>
+								@endforeach	
+							</form>
+						</div>
 					</section>
 				</div>
 				<div class="box">
@@ -69,7 +68,7 @@
 			<div class="right-panel panel fog">
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Colors</h2></header>
-					<section >
+					<section>
 						<div class="colors" id="picker"></div>
 					</section>
 				</div>

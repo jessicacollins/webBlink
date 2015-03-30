@@ -7,6 +7,9 @@
 //   background-size: cover;
 // }
 
+body {
+  background-color: #213747;
+}
 
 main {
 	width: 960px;
@@ -36,6 +39,7 @@ main {
 
 -webkit-animation: pulse 30s infinite alternate;
   text-decoration: none;
+
 }
 
   @-webkit-keyframes pulse {
@@ -93,9 +97,14 @@ nav {
 	width: calc(30% - 10px);
 }
 
-.box {
+#picker {
+  // height: calc(50% - 5px);
+  // width: calc(30% - 10px);
 
+}
+.box {
 	height: calc(50% - 5px);
+
 }
 
 .box header {
@@ -128,6 +137,7 @@ nav {
 	border-bottom-right-radius: 5px;
 	padding: 15px;
 
+
 }
 
 .fog section {
@@ -135,6 +145,7 @@ nav {
   // -webkit-filter: blur(5px);
   // -moz-filter: blur(5px);
   // -o-filter: blur(5px);
+
 }
 
 .glass section {
@@ -146,12 +157,15 @@ nav {
 .patterns-form {
   margin-top: 10px;
   margin-left: 10px;
-}
 
+}
+.patterns-scroll {
+
+}
 .save-pattern {
 
 	padding: 20px 0px;
-	margin-top: 5px;
+	margin-top: 0;
   margin-left: 10px;
 }
 
@@ -188,11 +202,16 @@ nav {
     color: #222222;
     width: 182px;
     margin-top: 10px;
-    border: none;
+    margin-left: 0;
+
 }
 
 .pattern_select {
   margin: 10px;
+  width: 182px;
+  margin-left: 0;
+  outline: none;
+  border: none;
 }
 
 .update-pattern, .delete-pattern {
@@ -204,7 +223,8 @@ nav {
   
   i {
     padding: 50px;
-    color: #FF5A00;
+    // color: #FF5A00;
+    color: rgba(255, 255, 255, 0.9)
   }
 }
 

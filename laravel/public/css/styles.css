@@ -1,3 +1,6 @@
+body {
+  background-color: #213747; }
+
 main {
   width: 960px;
   box-sizing: border-box;
@@ -118,7 +121,7 @@ nav {
 
 .save-pattern {
   padding: 20px 0px;
-  margin-top: 5px;
+  margin-top: 0;
   margin-left: 10px; }
 
 .save-pattern input {
@@ -151,10 +154,14 @@ nav {
   color: #222222;
   width: 182px;
   margin-top: 10px;
-  border: none; }
+  margin-left: 0; }
 
 .pattern_select {
-  margin: 10px; }
+  margin: 10px;
+  width: 182px;
+  margin-left: 0;
+  outline: none;
+  border: none; }
 
 .update-pattern, .delete-pattern {
   display: none; }
@@ -163,7 +170,7 @@ nav {
   text-align: center; }
   .power i {
     padding: 50px;
-    color: #FF5A00; }
+    color: rgba(255, 255, 255, 0.9); }
 
 .dial {
   outline: none; }
