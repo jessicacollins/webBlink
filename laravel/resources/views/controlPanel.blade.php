@@ -39,7 +39,7 @@
 					<section>
 						<div class="save-pattern">
 							<form action="">
-						<select class="pattern_select">
+						<select class="pattern-select">
 							@foreach($p_types as $p_type)
 							<option value="{{$p_type->pattern_type_id}}">{{$p_type->display_name}}</option>
 								
