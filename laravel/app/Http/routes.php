@@ -19,7 +19,7 @@ Route::get('api/setparams/{params}', 'PatternController@setParams');
 Route::get('api/savepattern', 'PatternController@savePattern');
 Route::get('api/updatepattern/{pattern_id}', 'PatternController@updatePattern');
 Route::get('api/getpattern/{pattern_id}', 'PatternController@getPattern');
-// Route::get('delete/{pattern_id}', 'PatternController@deletePattern');
+Route::get('api/deletepattern/{pattern_id}', 'PatternController@deletePattern');
 
 
 

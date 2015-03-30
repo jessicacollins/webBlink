@@ -1,13 +1,11 @@
 
-body{ 
-  background: url(/images/stardust.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-
-}
+// body{ 
+//   background: url(/images/stardust.png) no-repeat center center fixed; 
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   -o-background-size: cover;
+//   background-size: cover;
+// }
 
 
 main {
@@ -153,12 +151,15 @@ nav {
 .save-pattern {
 
 	padding: 20px 0px;
-	margin-top: 20px;
+	margin-top: 5px;
   margin-left: 10px;
 }
 
 .save-pattern input {
 	border: 1px solid #aaa;
+  color: #222222;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.9);
 	padding: 10px 10px;
 	border-radius: 2px;
 	width: 160px;
@@ -183,10 +184,15 @@ nav {
 
 .save-pattern button  {
     padding: 10px;
-    background: #FF5A00;
-    color: #FFF;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222222;
     width: 182px;
     margin-top: 10px;
+    border: none;
+}
+
+.pattern_select {
+  margin: 10px;
 }
 
 .update-pattern, .delete-pattern {
@@ -291,18 +297,23 @@ ul {
   margin: 0;
   padding: 15px 4px 17px 0;
   list-style: none;
-  color: #fff;
+  // color: #fff;
+  text-decoration: none;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 ul li {
-  font: bold 12px/18px sans-serif;
+  // font: bold 12px/18px sans-serif;
   display: inline-block;
   margin-right: -4px;
   position: relative;
   padding: 15px 20px;
-  background: #373737;
+  text-decoration: none;
+  // background-color: rgba(255, 255, 255, 0.9);
+  // color: #222222;
+  background-color: rgba(255, 255, 255, 0.5);
+  color:  #F8F8F8;  
   cursor: pointer;
   -webkit-transition: all 0.2s;
   -moz-transition: all 0.2s;
@@ -311,8 +322,10 @@ ul li {
   transition: all 0.2s;
 }
 ul li:hover {
-  background: #555;
-  color: #fff;
+  // background-color: rgba(255, 255, 255, 0.5);
+  // color:  #F8F8F8; 
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222222;
 }
 ul li ul {
   padding: 0;
@@ -320,6 +333,7 @@ ul li ul {
   top: 48px;
   left: 0;
   width: 150px;
+  text-decoration: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
@@ -333,9 +347,11 @@ ul li ul {
   -transition: opacity 0.2s;
 }
 ul li ul li { 
-  background: #555; 
   display: block; 
-  color: #fff;
+  // background-color: rgba(255, 255, 255, 0.5);
+  // color:  #F8F8F8; 
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222222;
   text-shadow: 0 -1px 0 #000;
 }
 ul li ul li:hover { background: #666; }

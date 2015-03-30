@@ -21,13 +21,13 @@
 				</div>
 				<nav>
 					<ul><li>Home</li>
-						<li>
+{{-- 						<li>
 					    References
 					    	<ul>
 					      		<li><a href="http://www.adafruit.com/">Ada Fruit</a></li>
 					      		<li><a href="https://www.spark.io/">Spark.io</a></li>
 					    	</ul>
-					  	</li>
+					  	</li> --}}
 					  	@if(Auth::guest())
 						<li><a href="/auth/login">Login</a></li>
 						<li><a href="/auth/register">Register</a></li>

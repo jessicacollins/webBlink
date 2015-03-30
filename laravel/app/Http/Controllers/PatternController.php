@@ -7,7 +7,7 @@ use DB;
 class PatternController extends Controller {
 
 	// Set to true for testing if spark is not connected
-	protected $test = true;
+	protected $test = false;
 
 	// Get custom pattern settings
 	public function getPattern($pattern_id) {
@@ -59,16 +59,18 @@ class PatternController extends Controller {
 		return response()->json(['color' => $pattern->color, 'speed' => $pattern->speed, 'intensity' =>$pattern->intensity, 'pattern_name' => $pattern->pattern_name, 'pattern_type_id' => $pattern->pattern_type_id]);
 
 	}
-  //   public function deletePattern($pattern_id) {
-  //   	$sql = '
-		// 	DELETE FROM pattern WHERE pattern_id = :pattern_id
-  //   	';
-  //   	$delete_values = ['pattern_id' => $pattern_id]
-		
-		// $results = DB::delete($sql, $delete_values);
 
-		// return redirect('controlPanel');
-  //   }
+
+    public function deletePattern($pattern_id) {
+    	$sql = '
+			DELETE FROM pattern WHERE pattern_id = :pattern_id
+    	';
+    	$delete_values = ['pattern_id' => $pattern_id];
+		
+		$results = DB::delete($sql, $delete_values);
+
+		return response()->json(['results' => $results]);
+    }
 
 	public function setParams($params) {
 		return $this->sendSparkCommand($params);
