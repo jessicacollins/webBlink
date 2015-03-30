@@ -52,7 +52,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
-						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=-160 data-thickness=".3">			
+						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3">			
 
 					</section>
 				</div>
@@ -67,7 +67,7 @@
 			</div>
 			<div class="right-panel panel fog">
 				<div class="box">
-					<header><h2><i class="fa fa-fire"></i>  Colors</h2></header>
+					<header><h2><i class="fa fa-paint-brush"></i>  Colors</h2></header>
 					<section>
 						<div class="colors" id="picker"></div>
 					</section>
@@ -75,7 +75,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-power-off"></i> Power Off</h2></header>
 					<section class="power">
-						<i class="fa fa-power-off fa-5x off"></i>
+						<i class="fa fa-power-off fa-5x off hover"></i>
 						
 					</section>
 				</div>
