@@ -58,7 +58,9 @@
 				<div class="box">
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
-						<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">			
+						<div class="speed-dial">
+							<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">
+						</div>			
 
 					</section>
 				</div>
@@ -81,7 +83,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-power-off"></i> Power Off</h2></header>
 					<section class="power">
-						<i class="fa fa-power-off fa-5x off-hover"></i>
+						<i class="fa fa-power-off fa-5x off off-hover"></i>
 						
 					</section>
 				</div>
