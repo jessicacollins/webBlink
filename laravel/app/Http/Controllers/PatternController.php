@@ -7,14 +7,13 @@ use DB;
 class PatternController extends Controller {
 
 	// Set to true for testing if spark is not connected
-	protected $test = true;
+	protected $test = false;
 
 	// Get custom pattern settings
 	public function getPattern($pattern_id) {
 		$pattern = new Pattern($pattern_id);
 
 		return response()->json(['color' => $pattern->color, 'speed' => $pattern->speed, 'intensity' =>$pattern->intensity, 'pattern_name' => $pattern->pattern_name, 'pattern_type_id' => $pattern->pattern_type_id]);
-	
 	}
 
 	public function savePattern() {
@@ -56,7 +55,7 @@ class PatternController extends Controller {
 		$pattern->pattern_type_id = $pattern_type_id;
 		$pattern->save();
 
-		return response()->json(['color' => $pattern->color, 'speed' => $pattern->speed, 'intensity' =>$pattern->intensity, 'pattern_name' => $pattern->pattern_name, 'pattern_type_id' => $pattern->pattern_type_id]);
+		return response()->json(['color' => $pattern->color, 'speed' => $pattern->speed, 'intensity' =>$pattern->intensity, 'name' => $pattern->pattern_name, 'pattern_type_id' => $pattern->pattern_type_id]);
 
 	}
 
@@ -110,6 +109,8 @@ class PatternController extends Controller {
 
 		curl_close($curl);
 
-		return $resp;
+		return $resp . ' ' . $params;
 	}
+
+
 }

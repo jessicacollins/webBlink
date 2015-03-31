@@ -26,7 +26,7 @@
 								</div> --}}
 								<div>
 								  <input type="radio" value="{{$pattern->pattern_id}}" id="{{$pattern->pattern_id}}" name="pattern" />
-								  <label for="{{$pattern->pattern_id}}"><span></span>{{$pattern->pattern_name}}</label>
+								  <label for="{{$pattern->pattern_id}}"><span></span><em class="pattern-radio-name">{{$pattern->pattern_name}}</em></label>
 								</div>
 								@endforeach	
 							</form>
@@ -59,7 +59,7 @@
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
 						<div class="speed-dial">
-							<input type="text" class="dial speed" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">
+							<input type="text" class="dial speed" data-min="0" data-max="60" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">
 						</div>			
 
 					</section>

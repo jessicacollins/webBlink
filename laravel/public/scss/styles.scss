@@ -11,6 +11,7 @@ body {
   background-color: #213747;
 }
 
+
 main {
 	width: 960px;
 	box-sizing: border-box;
@@ -39,7 +40,6 @@ main {
 
 -webkit-animation: pulse 30s infinite alternate;
   text-decoration: none;
-
 }
 
   @-webkit-keyframes pulse {
@@ -49,6 +49,7 @@ main {
        75% {color: #99D2E4;}
        100% {color: #D8CAB4;}
   }
+
 nav {
 	text-align: center;
   background-color: transparent;
@@ -65,7 +66,6 @@ nav {
 	margin-left: -5px;
 	margin-right: -5px;
 	overflow: hidden;
-
 }
 
 .panel {
@@ -93,11 +93,6 @@ nav {
 	width: calc(30% - 10px);
 }
 
-#picker {
-  // height: calc(50% - 5px);
-  // width: calc(30% - 10px);
-
-}
 .box {
 	height: calc(50% - 5px);
 }
@@ -107,7 +102,6 @@ nav {
 	height: 25%;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
-
 }
 
 .fog header {
@@ -135,9 +129,6 @@ nav {
 
 .fog section {
   background-color: rgba(255, 255, 255, 0.6);
-  // -webkit-filter: blur(5px);
-  // -moz-filter: blur(5px);
-  // -o-filter: blur(5px);
 }
 
 .glass section {
@@ -153,10 +144,10 @@ nav {
 }
 .patterns-scroll {
   height: 125px;
-  overflow: scroll;
+  overflow-y: scroll;
 }
-.save-pattern {
 
+.save-pattern {
 	padding: 20px 0px;
 	margin-top: 0;
   margin-left: 10px;
@@ -219,15 +210,11 @@ nav {
     margin-left: 10px;
 }
 
-.pattern-radio {
-
-}
 .power {
   text-align: center;
   
   i {
     padding: 50px;
-    // color: #FF5A00;
     color: rgba(255, 255, 255, 0.9)
   }
 }
@@ -240,39 +227,6 @@ nav {
 	margin-left: 20px;
 	margin-top: -5px;
 }
-
-//Fancy Radio Button
-
-// .special-radio input {
-//     display: none;
-// }
-
-// .toggle {
-//     width: 2em;
-//     height: 1em;
-//     background: linear-gradient(#888, #eee);
-//     border-radius: 25px;
-// }
-
-// .toggle div {
-//     width: 1em;
-//     height: 1em;
-//     border-radius: 50%;
-//     background: linear-gradient(#eee, #888);
-//     transition: all 1s;
-// }
-
-// .special-radio input:checked ~ .toggle div {
-//     transform: translateX(1em);
-//     transition: all 1s;
-// }
-
-// .radio-name {
-//   display: inline-block;
-
-// }
-
-
 
 // Radio Buttons
 $uncheckedColor: #292321;
@@ -331,21 +285,17 @@ ul {
   margin: 0;
   padding: 15px 4px 17px 0;
   list-style: none;
-  // color: #fff;
   text-decoration: none;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 ul li {
-  // font: bold 12px/18px sans-serif;
   display: inline-block;
   margin-right: -4px;
   position: relative;
   padding: 15px 20px;
   text-decoration: none;
-  // background-color: rgba(255, 255, 255, 0.9);
-  // color: #222222;
   background-color: rgba(255, 255, 255, 0.5);
   color:  #F8F8F8;  
   cursor: pointer;
@@ -356,8 +306,6 @@ ul li {
   transition: all 0.2s;
 }
 ul li:hover {
-  // background-color: rgba(255, 255, 255, 0.5);
-  // color:  #F8F8F8; 
   background-color: rgba(255, 255, 255, 0.9);
   color: #222222;
 }
@@ -382,8 +330,6 @@ ul li ul {
 }
 ul li ul li { 
   display: block; 
-  // background-color: rgba(255, 255, 255, 0.5);
-  // color:  #F8F8F8; 
   background-color: rgba(255, 255, 255, 0.9);
   color: #222222;
   text-shadow: 0 -1px 0 #000;
@@ -402,11 +348,15 @@ ul li:hover ul {
   margin-top: 40px; 
 }
 
-select {
-  // -webkit-appearance: none;
-  // -webkit-border-radius: 0px;
-// border: 1px ridge rgb(169, 169, 169);
+.pattern-radio-name {
+  font-style: normal;
 }
+
+// select {
+//   // -webkit-appearance: none;
+//   // -webkit-border-radius: 0px;
+// // border: 1px ridge rgb(169, 169, 169);
+// }
 
 // .blur {
 //     -webkit-filter: blur(5px);
