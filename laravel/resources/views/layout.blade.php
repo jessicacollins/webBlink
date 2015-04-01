@@ -20,7 +20,8 @@
 					<a href="/"><h1>&lt;web<strong>B</strong>link&gt;</h1></a>
 				</div>
 				<nav>
-					<ul><li>Home</li>
+					<ul>
+					{{-- <li>Home</li> --}}
 {{-- 						<li>
 					    References
 					    	<ul>

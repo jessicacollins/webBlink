@@ -105,7 +105,7 @@ nav {
   height: 75%;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  padding: 15px; }
+  padding: 10px; }
 
 .fog section {
   background-color: rgba(255, 255, 255, 0.6); }
@@ -124,59 +124,99 @@ nav {
   overflow-y: scroll; }
 
 .save-pattern {
-  padding: 20px 0px;
+  padding: 10px 0px;
   margin-top: 0;
-  margin-left: 10px; }
+  text-align: center; }
+
+.pattern-select {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  text-align: center; }
 
 .save-pattern input {
   border: 1px solid #aaa;
-  color: #222222;
+  color: white;
   font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
   padding: 10px 10px;
   border-radius: 2px;
   width: 160px;
   outline: none; }
 
 ::-webkit-input-placeholder {
-  text-align: center; }
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4); }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  text-align: center; }
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4); }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  text-align: center; }
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4); }
 
 :-ms-input-placeholder {
-  text-align: center; }
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4); }
 
 .save-pattern button {
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #222222;
-  width: 182px;
   margin-top: 10px;
-  margin-left: 0; }
+  border-radius: 5px;
+  font-family: Arial;
+  text-shadow: 1px 1px 2px #000000;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 182px;
+  border: none; }
+
+.save-pattern button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222222;
+  text-decoration: none;
+  border: none; }
 
 .pattern-select {
   margin: 10px;
   width: 182px;
   margin-left: 0;
   outline: none;
-  border: none; }
+  border: none;
+  text-shadow: 1px 1px 2px #000000;
+  padding: 5px;
+  text-indent: 60px; }
 
 .update-pattern, .delete-pattern {
   display: none; }
 
 .new-pattern {
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #222222;
-  width: 182px;
   margin-top: 10px;
-  margin-left: 10px; }
+  border-radius: 5px;
+  font-family: Arial;
+  border-radius: 5px;
+  font-family: Arial;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  width: 182px;
+  border: none;
+  text-shadow: 1px 1px 2px #000000; }
+
+.new-pattern:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222222;
+  text-decoration: none;
+  border: none; }
+
+.new-pattern-div {
+  text-align: center; }
 
 .power {
   text-align: center; }
@@ -198,7 +238,7 @@ input[type="radio"] {
   display: none; }
 
 input[type="radio"] + label {
-  color: #292321;
+  color: rgba(255, 255, 255, 0.9);
   font-family: Arial, sans-serif;
   font-size: 14px; }
 
@@ -212,10 +252,10 @@ input[type="radio"] + label span {
   border-radius: 50%; }
 
 input[type="radio"] + label span {
-  background-color: #292321; }
+  background-color: rgba(255, 255, 255, 0.3); }
 
 input[type="radio"]:checked + label span {
-  background-color: #00FFFF; }
+  background-color: rgba(255, 255, 255, 0.9); }
 
 input[type="radio"] + label span, input[type="radio"]:checked + label span {
   -webkit-transition: background-color 0.4s linear;
@@ -282,10 +322,104 @@ ul li:hover ul {
   visibility: visible; }
 
 .login {
-  width: 960px;
-  background-color: DarkCyan;
-  margin: 0 auto;
-  margin-top: 40px; }
+  width: 300px;
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.login form {
+  padding: 10px; }
+
+.login input {
+  margin-left: 5px;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  width: 80%;
+  padding: 10px 10px 10px 10px; }
 
 .pattern-radio-name {
   font-style: normal; }
+
+.login button {
+  margin-top: 10px;
+  border-radius: 5px;
+  font-family: Arial;
+  border-radius: 5px;
+  font-family: Arial;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  width: 80%;
+  border: none;
+  text-shadow: 1px 1px 2px #000000; }
+
+.login button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222222;
+  text-decoration: none;
+  border: none; }
+
+.forgot-password {
+  margin: 20px; }
+  .forgot-password a {
+    text-decoration: none;
+    color: white; }
+
+.register {
+  width: 300px;
+  min-height: 200px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.register form {
+  padding: 10px; }
+
+.register input {
+  margin-left: 5px;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+  width: 80%;
+  padding: 10px 10px 10px 10px; }
+
+.register button {
+  margin-top: 10px;
+  border-radius: 5px;
+  font-family: Arial;
+  border-radius: 5px;
+  font-family: Arial;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 20px;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
+  width: 80%;
+  border: none;
+  text-shadow: 1px 1px 2px #000000; }
+
+.register button:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: #222222;
+  text-decoration: none;
+  border: none; }

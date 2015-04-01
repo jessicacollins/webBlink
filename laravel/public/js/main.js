@@ -19,12 +19,6 @@ $(function() {
 		submit:0,
 		onChange: function(hsb, hex, rgb) {
 			if (! pattern_changed){
-				// if (pattern_type_id == null) {
-				// 	pattern_name = '5';
-				// 	color = hex;
-				// } else {
-				// 	color = hex;
-				// }
 				color = hex;
 				sendParams();
 			}
@@ -263,10 +257,18 @@ $(function() {
 				$('#picker').colpickSetColor('303e47',true);
 				$('#picker').show();
 				$('.speed-dial').show();
+				pattern_type_id = 4;
+				sendParams();
 	            }
 	        });	
 		}
 	}
+
+
+	// $('pattern-select').click(function() {
+	// 	pattern_type_id = $('pattern-select').val();
+	// 	sendParams();
+	// });
 
 	// // Change color of off button on hover
 	// $(".off-hover").hover(function(){

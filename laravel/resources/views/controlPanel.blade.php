@@ -31,7 +31,9 @@
 								@endforeach	
 							</form>
 						</div>
-						<button class="new-pattern">New Pattern</button>
+						<div class="new-pattern-div">
+							<button class="new-pattern">New Pattern</button>
+						</div>
 					</section>
 				</div>
 				<div class="box">
@@ -59,7 +61,7 @@
 					<header><h2><i class="fa fa-bolt"></i>  Speed</h2></header>
 					<section>
 						<div class="speed-dial">
-							<input type="text" class="dial speed" data-min="0" data-max="60" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">
+							<input type="text" class="dial speed" data-min="0" data-max="60" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-bgColor="rgba(255, 255, 255, 0.3)" data-fgColor="rgba(255, 255, 255, 0.9)">
 						</div>			
 
 					</section>
@@ -67,7 +69,7 @@
 				<div class="box">
 					<header><h2><i class="fa fa-fire"></i>  Intensity</h2></header>
 					<section>
-						<input type="text" class="dial intensity" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-fgColor="#00FFFF">			
+						<input type="text" class="dial intensity" data-min="0" data-max="255" value="0" data-angleArc=320 data-angleOffset=17 data-thickness=".3" data-bgColor="rgba(255, 255, 255, 0.3)" data-fgColor="rgba(255, 255, 255, 0.9)">			
 
 
 					</section>

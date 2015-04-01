@@ -3,7 +3,7 @@
 @section('main_content')
 	<div class="main">
 		<div class="login">
-			<div>Login</div>
+			{{-- <div class="login-header">Login</div> --}}
 			<div>
 				@if (count($errors) > 0)
 					<div class="alert alert-danger">
@@ -20,16 +20,16 @@
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 					<div >
-						<label>E-Mail Address</label>
+						
 						<div>
-							<input type="email"  name="email" value="{{ old('email') }}">
+							<input type="email"  placeholder="Email Address" name="email" value="{{ old('email') }}">
 						</div>
 					</div>
 
 					<div>
-						<label>Password</label>
+						
 						<div>
-							<input type="password"  name="password">
+							<input type="password"  name="password" placeholder="Password">
 						</div>
 					</div>
 
@@ -37,7 +37,7 @@
 						<div>
 							<button type="submit">Login</button>
 
-							<a href="{{ url('/password/email') }}">Forgot Your Password?</a>
+							<div class="forgot-password"><a href="{{ url('/password/email') }} ">Forgot Your Password?</a><div>
 						</div>
 					</div>
 				</form>

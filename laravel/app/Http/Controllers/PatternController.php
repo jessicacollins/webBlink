@@ -7,7 +7,7 @@ use DB;
 class PatternController extends Controller {
 
 	// Set to true for testing if spark is not connected
-	protected $test = false;
+	protected $test = true;
 
 	// Get custom pattern settings
 	public function getPattern($pattern_id) {
