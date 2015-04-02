@@ -22,7 +22,8 @@ main {
 
 .logo a {
   -webkit-animation: pulse 30s infinite alternate;
-  text-decoration: none; }
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #000000; }
 
 @-webkit-keyframes pulse {
   0% {
@@ -89,12 +90,14 @@ nav {
   border-top-right-radius: 5px; }
 
 .fog header {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #222222; }
+  background-color: rgba(255, 255, 255, 0.7);
+  color: white;
+  text-shadow: 1px 1px 1px #000000; }
 
 .glass header {
   background-color: rgba(255, 255, 255, 0.5);
-  color: #F8F8F8; }
+  color: white;
+  text-shadow: 1px 1px 1px #000000; }
 
 .box h2 {
   margin: 0;
@@ -108,7 +111,7 @@ nav {
   padding: 10px; }
 
 .fog section {
-  background-color: rgba(255, 255, 255, 0.6); }
+  background-color: rgba(255, 255, 255, 0.5); }
 
 .glass section {
   background-color: rgba(255, 255, 255, 0.3);
@@ -124,13 +127,8 @@ nav {
   overflow-y: scroll; }
 
 .save-pattern {
-  padding: 10px 0px;
+  padding: 0;
   margin-top: 0;
-  text-align: center; }
-
-.pattern-select {
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
   text-align: center; }
 
 .save-pattern input {
@@ -142,54 +140,45 @@ nav {
   padding: 10px 10px;
   border-radius: 2px;
   width: 160px;
-  outline: none; }
+  outline: none;
+  font-size: 20px; }
 
 ::-webkit-input-placeholder {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4); }
+  color: rgba(255, 255, 255, 0.5); }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4); }
+  color: rgba(255, 255, 255, 0.5); }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4); }
+  color: rgba(255, 255, 255, 0.5); }
 
 :-ms-input-placeholder {
-  text-align: center;
-  color: rgba(255, 255, 255, 0.4); }
+  color: rgba(255, 255, 255, 0.5); }
 
 .save-pattern button {
   margin-top: 10px;
   border-radius: 5px;
-  font-family: Arial;
-  text-shadow: 1px 1px 2px #000000;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
+  background-color: white;
+  color: #68636e;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   width: 182px;
   border: none; }
 
-.save-pattern button:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #222222;
-  text-decoration: none;
-  border: none; }
-
 .pattern-select {
   margin: 10px;
   width: 182px;
-  margin-left: 0;
+  height: 40px;
+  margin-left: 4px;
   outline: none;
-  border: none;
-  text-shadow: 1px 1px 2px #000000;
-  padding: 5px;
-  text-indent: 60px; }
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 20px; }
 
 .update-pattern, .delete-pattern {
   display: none; }
@@ -199,20 +188,12 @@ nav {
   border-radius: 5px;
   font-family: Arial;
   border-radius: 5px;
-  font-family: Arial;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: white;
+  background-color: white;
+  color: #68636e;
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
   width: 182px;
-  border: none;
-  text-shadow: 1px 1px 2px #000000; }
-
-.new-pattern:hover {
-  background-color: rgba(255, 255, 255, 0.6);
-  color: #222222;
-  text-decoration: none;
   border: none; }
 
 .new-pattern-div {
@@ -228,8 +209,7 @@ nav {
   outline: none; }
 
 .colors {
-  margin-left: 20px;
-  margin-top: -5px; }
+  margin-left: 25px; }
 
 div {
   margin: 0 0 0.5em 0; }
@@ -249,7 +229,8 @@ input[type="radio"] + label span {
   margin: -1px 4px 0 0;
   vertical-align: middle;
   cursor: pointer;
-  border-radius: 50%; }
+  border-radius: 50%;
+  border: 1px solid white; }
 
 input[type="radio"] + label span {
   background-color: rgba(255, 255, 255, 0.3); }

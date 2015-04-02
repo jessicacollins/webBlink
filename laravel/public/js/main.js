@@ -32,7 +32,6 @@ $(function() {
 		color = data.color;
 		pattern_type_id = data.pattern_type_id; 
 
-
 	    $('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
 	    $('.pattern-select').val(pattern_type_id).attr("selected");
 		
@@ -41,7 +40,6 @@ $(function() {
 	}
 
 	//Update UI
-
 	function updateUIControls() {
 		pattern_changed = true;
 		
@@ -82,18 +80,18 @@ $(function() {
 	}
 
 	// Get Custom Pattern Settings
-		$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
-			pattern_id = event.currentTarget.value;
+	$('.patterns-form').on('click', 'input[name="pattern"]', function(event) {
+		pattern_id = event.currentTarget.value;
 
-			$.get('api/getpattern/' + pattern_id, function(data) {				
+		$.get('api/getpattern/' + pattern_id, function(data) {				
 
-				setUI(data);
-				showHideControls(pattern_type_id);
-				showHideFormButtons(pattern_id);
+			setUI(data);
+			showHideControls(pattern_type_id);
+			showHideFormButtons(pattern_id);
 
-				sendParams();
-				});
+			sendParams();
 		});
+	});
 
 	//Set Off
 	$('.off').click(function(event) {
@@ -203,9 +201,6 @@ $(function() {
 	            	pattern_name: pattern_name
 	             },
 	            success: function(data) {
-	    //         	$( ".patterns-form" ).append(
-					// '<div><input type="radio" value="' + data.id + '" name="pattern" checked /><label><span></span>' + data.name + '</label></div>'
-					// );
 	            	console.log(data);
 	            	$('label[for="'+pattern_id+'"] em').text(data.name);
 	            }
@@ -216,7 +211,6 @@ $(function() {
 	//New Pattern
 	$('button.new-pattern').click(function(event) {
 		event.preventDefault();
-		// pattern_changed = true;
 		$('input[name="pattern-name"]').val(null);
 		$('.pattern-select').val(null);
 		$('button.save-pattern').show();
@@ -227,7 +221,6 @@ $(function() {
 		$('#picker').colpickSetColor('303e47',true);
 		$('#picker').show();
 		$('.speed-dial').show();
-		// pattern_changed = false;
 	});
 
 	//Delete a Pattern
