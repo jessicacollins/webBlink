@@ -7,7 +7,7 @@ use DB;
 class PatternController extends Controller {
 
 	//Set to true for testing if spark is not connected
-	protected $test = true;
+	protected $test = false;
 
 	//Get custom pattern settings
 	public function getPattern($pattern_id) {
@@ -91,7 +91,7 @@ class PatternController extends Controller {
 		// Set some options - we are passing in a useragent too here
 		curl_setopt_array($curl, array(
 		    CURLOPT_RETURNTRANSFER => 1,
-		    CURLOPT_URL => 'https://api.spark.io/v1/devices/55ff6d065075555318171787/neo/',
+		    CURLOPT_URL => 'https://api.spark.io/v1/devices/54ff67066672524851221867/neo/',
 		    CURLOPT_POST => 1,
 		    CURLOPT_POSTFIELDS => array(
 		        'params' => $params

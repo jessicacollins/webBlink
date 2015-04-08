@@ -211,6 +211,7 @@ $(function() {
 	//New Pattern
 	$('button.new-pattern').click(function(event) {
 		event.preventDefault();
+		// pattern_changed = true;
 		$('input[name="pattern-name"]').val(null);
 		$('.pattern-select').val(null);
 		$('button.save-pattern').show();
@@ -221,6 +222,7 @@ $(function() {
 		$('#picker').colpickSetColor('303e47',true);
 		$('#picker').show();
 		$('.speed-dial').show();
+		// pattern_changed = false;
 	});
 
 	//Delete a Pattern
