@@ -32,8 +32,8 @@ $(function() {
 		color = data.color;
 		pattern_type_id = data.pattern_type_id; 
 
-	    $('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
-	    $('.pattern-select').val(pattern_type_id).attr("selected");
+	    	$('input[name="pattern-name"]').val(data.pattern_name).trigger('change');
+		$('.pattern-select').val(pattern_type_id).attr("selected");
 		
 		updateUIControls();
 
@@ -44,7 +44,7 @@ $(function() {
 		pattern_changed = true;
 		
 		$('#picker').colpickSetColor(color,true);
-	    $('.speed').val(speed).trigger('change');
+	    	$('.speed').val(speed).trigger('change');
 		$('.intensity').val(intensity).trigger('change');
 		
 		pattern_changed = false;
@@ -165,11 +165,11 @@ $(function() {
 	            success: function(data) {
 	            	var buttonId = $(".patterns-form")[0].length;
 	            	$( ".patterns-form" ).append(
-					'<div><input type="radio" id="pattern-button-' + buttonId + '"' + ' value="' + data.id + '" name="pattern" checked /><label for="pattern-button-' + buttonId + '"' + '><span></span> ' + data.name + '</label></div>'
-					);
-					$('button.save-pattern').hide();
-					$('button.update-pattern').show();
-					$('button.delete-pattern').show();	
+				'<div><input type="radio" id="pattern-button-' + buttonId + '"' + ' value="' + data.id + '" name="pattern" checked /><label for="pattern-button-' + buttonId + '"' + '><span></span> ' + data.name + '</label></div>'
+				);
+				$('button.save-pattern').hide();
+				$('button.update-pattern').show();
+				$('button.delete-pattern').show();	
 					
 	            }
 	        });			
@@ -211,7 +211,6 @@ $(function() {
 	//New Pattern
 	$('button.new-pattern').click(function(event) {
 		event.preventDefault();
-		// pattern_changed = true;
 		$('input[name="pattern-name"]').val(null);
 		$('.pattern-select').val(null);
 		$('button.save-pattern').show();
@@ -258,18 +257,4 @@ $(function() {
 	        });	
 		}
 	}
-
-
-	// $('pattern-select').click(function() {
-	// 	pattern_type_id = $('pattern-select').val();
-	// 	sendParams();
-	// });
-
-	// // Change color of off button on hover
-	// $(".off-hover").hover(function(){
-	//     $(".off-hover").css("color", "#00FFFF");
-	//     }, function(){
-	//     $(".off-hover").css("color", "rgba(255, 255, 255, 0.9)");
-	// });
-
 })
